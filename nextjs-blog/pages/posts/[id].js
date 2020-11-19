@@ -22,6 +22,7 @@ export default function Post({ postData }) {
   )
 }
 
+//to fetch a all posible blogs
 export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
@@ -30,6 +31,7 @@ export async function getStaticPaths() {
   }
 }
 
+//to fetch a specific post given an ID
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   return {
